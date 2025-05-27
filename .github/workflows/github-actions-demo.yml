@@ -1,4 +1,5 @@
 name: GitHub Actions Demo
+
 on:
   push:
     branches:
@@ -11,13 +12,17 @@ on:
   schedule:
   - cron: "15 6 * * 0"
   workflow_dispatch:
+  
 jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
       - name: Echo triggering event
-        run: echo ${{ github.event_name }}
-      - name: Echo branch event
-        run: echo ${{ github.ref }}
+        run: |
+          echo 🎉 The tiggering event was ${{ github.event_name }}!
+          echo 🪾 The event was run on ${{ github.ref }}
+      - uses: actions/checkout@v4
       - name: list
-        run: ls ${{ github.workspace }}
+        run: |
+          echo 📋 The files in the repository are:
+          tree
