@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo triggering event
-        run: echo github.event_name
+        run: echo ${{ github.event_name }}
       - name: Echo branch event
-        run: echo github.branch
+        run: echo ${{ github.ref }}
       - name: list
-        run: ls -alh
+        run: ls ${{ github.workspace }}
