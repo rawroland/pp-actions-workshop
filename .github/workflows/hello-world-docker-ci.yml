@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Hello World Docker Action
+        id: hello-world-docker-action
         uses: ./hello-world-docker-action
         with:
           who-to-greet: 'Roland Awemo'
