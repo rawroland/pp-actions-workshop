@@ -50,7 +50,7 @@ jobs:
       - name: Echo triggering event
         run: |
           echo Testing...
-          wait 15
+          sleep 15
 
   Production:
     runs-on: ubuntu-latest
